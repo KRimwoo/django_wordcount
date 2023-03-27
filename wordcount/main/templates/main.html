@@ -1,0 +1,16 @@
+<head>
+  <link rel="stylesheet" href="style.css">
+  </head>  
+<body>
+  <header>
+    <h1>WordCount</h1>
+  </header>
+  <a href= {% url 'about' %}>about</a>
+  <br>
+  <form action={% url 'result' %} method='GET'>
+    <textarea name="text" cols="50" rows="10" placeholder="문장 속 단어 개수를 세어드립니다."></textarea>
+    <br><br>
+    <button type="submit">submit</button>
+  </form>
+</body>
+

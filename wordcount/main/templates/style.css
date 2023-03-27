@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  background-color: #ddd;
+}
+
+header {
+  width: 100%;
+  height: 2em;
+  border-radius-top: 1em;
+  background-color: #185abd;
+}
+
+a {
+  border: 1px solid #000;
+  border-radius: 1em;
+  padding: 1em 3em;
+  font-size: 0.7em;
+  background-color: #eee;
+}
