@@ -1,72 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'result.css' %}" />
+</head>  
 <body>
-    <h1>결과</h1>
-    <a href= {% url 'main' %}>메인으로</a>
-    <ul>
-      <li>
-        <div class="word">&#127881; 단어: {{words.0.0}}</div>
-        &nbsp; | &nbsp;
-        <div class="counter">갯수:{{words.0.1}} &#127881;</div>
-     </li>
-    {% for word,value in words|slice:"1:" %}
-     <li>
-        <div class="word">단어: {{word}}</div>
-        &nbsp; | &nbsp;
-        <div class="counter">갯수:{{value}}</div>
-     </li>
-     <br>
-    {% endfor %}
-    </ul>
+  <header>
+    <div class="red"></div>
+    <div class="yellow"></div>
+    <div class="green"></div>
+    <h1>WordCount</h1>
+  </header>
+  <nav>
+    <a href= {% url 'main' %}>about</a>
+
+  </nav>
+  <div class="main">
+    <div class="popup">
+        <div class="header">
+            <h2>Result</h2>
+        </div>
+        <div class="result-section">
+          <div class="first">
+            <p>단어별 빈도수 확인</p>
+            <ul>
+              <li>
+                <div class="word">단어: {{words.0.0}}</div>
+                &nbsp; | &nbsp;
+                <div class="counter">갯수:{{words.0.1}}</div>
+              </li>
+
+              <details>
+                <summary>더보기</summary>
+                {% for word,value in words|slice:"1:" %}
+                <li>
+                    <div class="word">단어: {{word}}</div>
+                    &nbsp; | &nbsp;
+                    <div class="counter">갯수:{{value}}</div>
+                </li>
+                <br>
+                {% endfor %}
+              </details>
+              
+            </ul>
+          </div>
+          <div class="second">
+            결과2
+            <div class="word">단어: {{words.0.0}}</div>
+                &nbsp; | &nbsp;
+                <div class="counter">갯수:{{words.0.1}}</div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
 </body>
-<style>
-    body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #ddd;
-    }
-
-    h1 {
-        width: 100%;
-        text-align: center;
-    }
-
-    a {
-        border: 1px solid #000;
-        border-radius: 1em;
-        padding: 1em 3em;
-        font-size: 0.7em;
-        background-color: #eee;
-    }
-
-    ul {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        align-items: center;
-        margin-top: 2em;
-        padding: 3em;
-        list-style: none;
-        text-align: center;
-        background-color: #eee;
-    }
-
-    li {
-        display: flex;
-        flex-direction: row;
-    }
-
-    li:nth-child(1) {
-        margin-bottom: 0.5em;
-        font-size: 2em;
-        color: #1E90FF;
-    }
-
-    li:nth-child(2) {
-        font-size: 1.5em;
-        color: #4682B4;
-    }
-
-    .word {
-        
-    }
-</style>
+</html>
