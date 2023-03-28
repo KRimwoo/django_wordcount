@@ -26,18 +26,22 @@
             <p>단어별 빈도수 확인</p>
             <ul>
               <li>
-                <div class="word">단어: {{words.0.0}}</div>
-                &nbsp; | &nbsp;
-                <div class="counter">갯수:{{words.0.1}}</div>
+                <div class="word">가장 자주 등장한 단어:<br> {{words.0.0}}</div>
+                &nbsp;&rarr;&nbsp;
+                <div class="counter">갯수:<br>{{words.0.1}}</div>
               </li>
 
               <details>
                 <summary>더보기</summary>
+                <li>
+                  <div class="word">단어</div>
+                  <div class="counter">갯수</div>
+                </li>
                 {% for word,value in words|slice:"1:" %}
                 <li>
-                    <div class="word">단어: {{word}}</div>
-                    &nbsp; | &nbsp;
-                    <div class="counter">갯수:{{value}}</div>
+                    <div class="word">{{word}}</div>
+                    &nbsp;&rarr;&nbsp;
+                    <div class="counter">{{value}}</div>
                 </li>
                 <br>
                 {% endfor %}
@@ -47,9 +51,9 @@
           </div>
           <div class="second">
             결과2
-            <div class="word">단어: {{words.0.0}}</div>
-                &nbsp; | &nbsp;
-                <div class="counter">갯수:{{words.0.1}}</div>
+            <div class="word">총 단어 갯수 {{text_list|length}}</div>
+                &nbsp;&rarr;&nbsp;
+                <div class="counter">단어 종류 수:{{words|length}}</div>
             </div>
         </div>
     </div>
