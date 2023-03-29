@@ -2,13 +2,16 @@
   margin: 0;
   padding: 0;
   border: 0;
+  font-family: "Times New Roman", Times, serif;
 }
 
 body {
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   font-size: 16px;
-  background-color: #f5f5f5
+  background-color: #f5f5f5;
 }
 
 header {
@@ -21,7 +24,7 @@ header {
   text-align: center;
   align-items: center;
   color: #fff;
-  background-color: #2862a4
+  background-color: #2862a4;
 }
 
 header > .red {
@@ -41,7 +44,7 @@ header > .yellow {
   height: 0.85em;
   border: 0.5px solid #777;
   border-radius: 0.5em;
-  background-color: #ffBD44;
+  background-color: #ffbd44;
 }
 
 header > .green {
@@ -51,15 +54,13 @@ header > .green {
   height: 0.85em;
   border: 0.5px solid #777;
   border-radius: 0.5em;
-  background-color: #00CA4E;
+  background-color: #00ca4e;
 }
-
 
 header > h1 {
   width: 30%;
   position: absolute;
   left: 35%;
-  font-family:Georgia, 'Times New Roman', Times, serif;
   font-size: 1em;
 }
 
@@ -72,7 +73,6 @@ nav {
   border: 1px solid #ddd;
   background-color: #f5f5f5;
 }
-
 
 nav > a {
   width: 6em;
@@ -91,9 +91,8 @@ nav > a:visited {
 
 .main {
   display: flex;
-  position: relative;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 7em);
   text-align: center;
   justify-content: center;
   align-items: center;
