@@ -13,7 +13,7 @@
     <h1>WordCount</h1>
   </header>
   <nav>
-    <a href= {% url 'main' %}>about</a>
+    <a href= {% url 'main' %}>&#8962;<br><br>Main</a>
 
   </nav>
   <div class="main">
@@ -23,19 +23,19 @@
         </div>
         <div class="result-section">
           <div class="first">
-            <p>단어별 빈도수 확인</p>
+            <p class="description">단어별 빈도수 확인</p>
             <ul>
               <li>
-                <div class="word">가장 자주 등장한 단어:<br> {{words.0.0}}</div>
+                <div class="word">가장 자주 등장한 단어: &nbsp;{{words.0.0}}</div>
                 &nbsp;&rarr;&nbsp;
-                <div class="counter">갯수:<br>{{words.0.1}}</div>
+                <div class="counter">{{words.0.1}}번</div>
               </li>
 
               <details>
                 <summary>더보기</summary>
                 <li>
                   <div class="word">단어</div>
-                  <div class="counter">갯수</div>
+                  <div class="counter">빈도</div>
                 </li>
                 {% for word,value in words|slice:"1:" %}
                 <li>
@@ -50,10 +50,9 @@
             </ul>
           </div>
           <div class="second">
-            결과2
-            <div class="word">총 단어 갯수 {{text_list|length}}</div>
-                &nbsp;&rarr;&nbsp;
-                <div class="counter">단어 종류 수:{{words|length}}</div>
+            <p class="description">결과</p>
+            <div class="word-total">총 단어 수: {{text_list|length}}</div>
+            <div class="word-number">단어 종류 수: {{words|length}}</div>
             </div>
         </div>
     </div>
